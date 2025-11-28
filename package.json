@@ -1,0 +1,11 @@
+{
+  "name": "hanz-scanner",
+  "version": "1.0.0",
+  "description": "VirusTotal Security Scanner",
+  "scripts": {
+    "dev": "serve public"
+  },
+  "dependencies": {
+    "serve": "^14.0.0"
+  }
+}
