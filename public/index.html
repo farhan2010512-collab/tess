@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Hanz Scanner</title>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Hanz Scanner</h1>
+            <p class="subtitle">Advanced security scanning for URLs and files</p>
+        </header>
+
+        <main class="main-content">
+            <section class="scan-section">
+                <div class="scan-card">
+                    <div class="scan-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="currentColor" stroke-width="2"/>
+                            <path d="M19 4H5C3.89543 4 3 4.89543 3 6V18C3 19.1046 3.89543 20 5 20H19C20.1046 20 21 19.1046 21 18V6C21 4.89543 20.1046 4 19 4Z" stroke="currentColor" stroke-width="2"/>
+                            <path d="M16 2V6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M8 2V6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h2>Scan a URL</h2>
+                    <p class="scan-description">Check any website for security threats</p>
+                    <div class="input-group">
+                        <input type="text" id="urlInput" placeholder="Enter URL (e.g., https://xxxx)">
+                        <button class="scan-btn" onclick="scanURL()">
+                            <span>Scan URL</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 6L16 12L10 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="scan-section">
+                <div class="scan-card">
+                    <div class="scan-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 2H6C4.89543 2 4 2.89543 4 4V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V8L14 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14 2V8H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16 13H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16 17H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M10 9H9H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h2>Scan a File</h2>
+                    <p class="scan-description">Upload and analyze files for malware (Max 32MB)</p>
+                    <div class="input-group">
+                        <div class="file-input-wrapper">
+                            <input type="file" id="fileInput">
+                            <label for="fileInput" class="file-input-label">
+                                <span id="fileInputText">Choose a file</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M14 2H6C4.89543 2 4 2.89543 4 4V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V8L14 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M14 2V8H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </label>
+                        </div>
+                        <button class="scan-btn" onclick="scanFile()">
+                            <span>Scan File</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 6L16 12L10 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <div id="result" class="result-container"></div>
+        </main>
+
+        <div id="fullReportModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Full Security Report</h2>
+                    <span class="close" onclick="closeModal()">&times;</span>
+                </div>
+                <div id="fullReportContent" class="modal-body"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+                      </html>
